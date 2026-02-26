@@ -390,12 +390,6 @@ export function getNavigation(siteSlug: string): NavigationItemMega[] {
         },
       },
     },
-
-    // 5. CONTACT (no submenu)
-    {
-      name: 'Contact',
-      href: `${basePath}/contact`,
-    },
   ]
 }
 
@@ -458,10 +452,6 @@ export function getSimpleNavigation(siteSlug: string): { name: string; href: str
         { name: 'Open Roles', href: `${basePath}/career/jobs` },
         { name: 'Culture & Values', href: `${basePath}/career/culture` },
       ],
-    },
-    {
-      name: 'Contact',
-      href: `${basePath}/contact`,
     },
   ]
 }

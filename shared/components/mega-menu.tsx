@@ -93,7 +93,7 @@ export function MegaMenu() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled ? 'glass-nav shadow-lg py-2' : 'bg-transparent py-4'
+          isScrolled ? 'glass-nav shadow-lg py-2' : 'bg-transparent py-6 mt-4'
         )}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -101,13 +101,13 @@ export function MegaMenu() {
             {/* Logo */}
             <Link href={basePath || '/'} className="flex items-center gap-2 group relative z-10">
               <Image
-                src="/logo.png"
+                src={useLightText ? '/logo-white.svg' : '/logo.svg'}
                 alt="Bravinci"
-                width={140}
-                height={40}
+                width={120}
+                height={35}
                 className={cn(
-                  'h-8 w-auto transition-all duration-300',
-                  useLightText ? 'brightness-0 invert' : ''
+                  'transition-all duration-300 w-auto',
+                  isScrolled ? 'h-7' : 'h-8'
                 )}
                 priority
               />
@@ -422,7 +422,7 @@ function MobileMenu({
               {/* Header */}
               <div className="flex items-center justify-between p-5 border-b border-border/50">
                 <Link href={basePath || '/'} className="flex items-center gap-2" onClick={onClose}>
-                  <Image src="/logo.png" alt="Bravinci" width={120} height={35} className="h-7 w-auto" />
+                  <Image src="/logo.svg" alt="Bravinci" width={120} height={35} className="h-7 w-auto" />
                 </Link>
                 <button
                   className="p-2.5 rounded-xl bg-muted/50 hover:bg-muted transition-colors"
