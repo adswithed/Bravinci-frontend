@@ -21,24 +21,28 @@ import { useSite } from '@/shared/lib/site-context'
 // Default footer links (can be overridden by WordPress)
 const defaultFooterLinks = {
   solutions: [
-    { name: 'Strategy Command Center', href: '/solutions/strategy-command-center' },
     { name: 'Dividos', href: '/solutions/dividos' },
-    { name: 'Strategic Masterclass', href: '/solutions/masterclass' },
+    { name: 'Data2Hire', href: '/solutions/data2hire' },
+    { name: 'Strategy Command Center', href: '/solutions/strategy-command-center' },
+    { name: 'Masterclass', href: '/solutions/masterclass' },
   ],
   services: [
-    { name: 'Consulting', href: '/services#consulting' },
-    { name: 'Education', href: '/services#education' },
-    { name: 'Managed Services', href: '/services#managed-services' },
+    { name: 'Strategy & Advisory', href: '/services/strategy-advisory' },
+    { name: 'Digital Transformation', href: '/services/digital-transformation' },
+    { name: 'Data & AI Enablement', href: '/services/data-ai' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
+    { name: 'Leadership', href: '/about/leadership' },
+    { name: 'Bravinci Code', href: '/bravinci-code' },
     { name: 'Careers', href: '/career' },
     { name: 'Contact', href: '/contact' },
   ],
-  resources: [
-    { name: 'Case Studies', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'SCIP ICoE Benelux', href: '#' },
+  insights: [
+    { name: 'Strategic Intelligence', href: '/insights/strategic-intelligence' },
+    { name: 'Artificial Intelligence', href: '/insights/artificial-intelligence' },
+    { name: 'Business Intelligence', href: '/insights/business-intelligence' },
+    { name: 'ESG', href: '/insights/esg' },
   ],
 }
 
@@ -206,11 +210,11 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Resources */}
+            {/* Insights */}
             <div className="space-y-4">
-              <h4 className="font-semibold text-white">Resources</h4>
+              <h4 className="font-semibold text-white">Insights</h4>
               <ul className="space-y-3">
-                {footerLinks.resources.map((link) => (
+                {(footerLinks.insights || []).map((link) => (
                   <li key={link.name}>
                     <Link
                       href={getHref(link.href)}

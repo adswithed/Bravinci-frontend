@@ -66,7 +66,8 @@ export interface FooterLinks {
   solutions: { name: string; href: string }[]
   services: { name: string; href: string }[]
   company: { name: string; href: string }[]
-  resources: { name: string; href: string }[]
+  insights: { name: string; href: string }[]
+  resources?: { name: string; href: string }[]
 }
 
 // WordPress API response types
