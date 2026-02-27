@@ -116,10 +116,7 @@ export function GlobalAboutPage() {
                 </h1>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We are strategic intelligence architects helping organizations navigate
-                  complexity and accelerate transformation. Founded on the principle that
-                  better intelligence drives better decisions, Bravinci has spent more than
-                  15 years partnering with ambitious organizations across six continents.
+                  Founded on the principle that better intelligence drives better decisions, Bravinci has spent more than 15 years partnering with ambitious organizations across six continents. We combine strategic foresight with technical mastery to deliver solutions that don't just solve today's problems but anticipate tomorrow's opportunities. Our team of strategists, data scientists, and transformation specialists works at the intersection of business strategy and advanced technology, turning complexity into clarity and insight into impact.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -388,10 +385,9 @@ export function GlobalAboutPage() {
 
               <div className="p-6 rounded-2xl glass-card text-center">
                 <Globe className="w-8 h-8 text-[#0E78AA] mx-auto mb-4" />
-                <h3 className="font-bold text-foreground mb-2">Global Reach</h3>
+                <h3 className="font-bold text-foreground mb-2">Global Presence</h3>
                 <p className="text-muted-foreground">
-                  Operating across Europe, Africa, and the Americas with 24/7 availability
-                  and local expertise in multiple regions.
+                  Headquartered in the Netherlands with delivery teams across Europe, Africa, and North America. We serve clients in 40+ countries, bringing global perspective to local challenges while respecting regional context and cultural nuance.
                 </p>
               </div>
             </div>

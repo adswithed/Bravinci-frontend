@@ -6,91 +6,87 @@ import { Footer } from '@/shared/components'
 import { GlobalSiteWrapper } from '@/sites/global/components'
 import { Button } from '@/shared/components/ui/button'
 import {
-  Users,
-  Target,
   TrendingUp,
-  Brain,
-  Globe,
-  Zap,
-  Shield,
-  BarChart3,
-  Clock,
-  Award,
-  Search,
-  UserCheck,
-  GitBranch,
-  AlertCircle,
+  Cloud,
+  Workflow,
+  Users,
+  Sparkles,
+  Settings,
+  Layers,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Zap,
+  Target,
+  Award
 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/shared/lib/utils'
 
 const capabilities = [
   {
-    icon: Brain,
-    title: 'AI-powered Candidate Matching and Ranking',
-    description: 'Intelligent algorithms that match candidates to positions based on skills, experience, and organizational needs.',
-  },
-  {
     icon: Target,
-    title: 'Skills Assessment and Gap Analysis',
-    description: 'Comprehensive evaluation of candidate capabilities and identification of skill gaps for targeted development.',
+    title: 'Digital Vision & Roadmap Development',
+    description: 'Create comprehensive digital strategies aligned with business objectives and market opportunities.',
   },
   {
-    icon: UserCheck,
-    title: 'Cultural Fit Evaluation and Prediction',
-    description: 'Advanced assessment tools that predict how well candidates will align with organizational culture and values.',
+    icon: Layers,
+    title: 'Enterprise Architecture & Platform Selection',
+    description: 'Design scalable architectures and select optimal technology platforms for your needs.',
   },
   {
-    icon: TrendingUp,
-    title: 'Performance Forecasting and Success Modelling',
-    description: 'Predictive analytics that forecast candidate performance and success probability in specific roles.',
+    icon: Cloud,
+    title: 'Cloud Migration & Modernization',
+    description: 'Migrate and modernize applications with minimal disruption and maximum value.',
   },
   {
-    icon: Globe,
-    title: 'Global Talent Market Intelligence',
-    description: 'Real-time insights into global talent markets, availability, and competitive compensation benchmarks.',
+    icon: Workflow,
+    title: 'Business Process Optimization & Automation',
+    description: 'Streamline operations and automate workflows for efficiency and agility.',
   },
   {
-    icon: Zap,
-    title: 'Hiring Velocity Optimization',
-    description: 'Streamlined processes and automation that accelerate time-to-hire while maintaining quality standards.',
+    icon: Sparkles,
+    title: 'Customer Experience Transformation',
+    description: 'Redesign customer journeys with digital-first experiences that drive engagement.',
   },
   {
-    icon: AlertCircle,
-    title: 'Retention Risk Assessment',
-    description: 'Early warning systems that identify retention risks and enable proactive intervention strategies.',
+    icon: Settings,
+    title: 'Digital Product & Service Design',
+    description: 'Develop innovative digital products and services that create market differentiation.',
   },
   {
-    icon: GitBranch,
-    title: 'Workforce Planning and Succession Modelling',
-    description: 'Strategic workforce planning tools that support succession planning and organizational capability development.',
+    icon: Layers,
+    title: 'Integration Architecture & API Strategy',
+    description: 'Build robust integration frameworks and API strategies for seamless connectivity.',
+  },
+  {
+    icon: Users,
+    title: 'Change Management & Adoption Enablement',
+    description: 'Drive user adoption and organizational change for sustainable transformation.',
   },
 ]
 
 const outcomes = [
   {
-    stat: '50%',
-    label: 'Reduction in Time-to-Hire',
-    description: 'Accelerated recruitment processes without compromising quality',
-    icon: Clock,
+    stat: '3x',
+    label: 'ROI Within 18 Months',
+    description: 'Triple return on transformation investments',
+    icon: TrendingUp,
   },
   {
-    stat: '35%',
-    label: 'Improvement in First-Year Retention',
-    description: 'Better talent decisions leading to longer tenure',
-    icon: Users,
+    stat: '60%',
+    label: 'Reduction in Manual Processes',
+    description: 'Significant automation and efficiency gains',
+    icon: Zap,
   },
   {
-    stat: 'Higher',
-    label: 'Hiring Manager Satisfaction',
-    description: 'Significantly improved satisfaction with talent acquisition',
-    icon: Award,
+    stat: '85%',
+    label: 'Improved Customer Satisfaction',
+    description: 'Higher NPS scores and customer engagement',
+    icon: Sparkles,
   },
 ]
 
-export function GlobalData2hirePage() {
+export function GlobalServiceDigitalTransformationPage() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -116,23 +112,23 @@ export function GlobalData2hirePage() {
               )}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium">
-                <Users className="w-4 h-4 text-[#0E78AA]" />
-                <span>Talent Intelligence</span>
+                <TrendingUp className="w-4 h-4 text-[#0E78AA]" />
+                <span>Digital Transformation</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="gradient-text">Empower HR with </span>
-                <span className="text-foreground">Strategic Workforce Analytics</span>
+                <span className="text-foreground">Transformation that delivers </span>
+                <span className="gradient-text">measurable business impact</span>
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Data2Hire integrates data from HRIS, ATS, and external sources into a comprehensive dataset. The platform's interactive dashboard provides real-time insights into workforce trends and risk scores, allowing HR teams to monitor and adjust strategies effectively.
+                Digital transformation has become a strategic imperative, yet most initiatives fail to deliver expected value. Organizations struggle with technology selection, integration complexity, change resistance, and unclear ROI. The challenge isn't technology availability—it's architecting transformation that aligns technical capabilities with business objectives while managing risk and ensuring sustainable adoption.
               </p>
             </div>
           </div>
         </section>
 
-        {/* What It Is / Who It's For */}
+        {/* Solution Framing */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
 
@@ -140,18 +136,18 @@ export function GlobalData2hirePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  <span className="text-foreground">Built for organizations that </span>
-                  <span className="gradient-text">compete on talent</span>
+                  <span className="text-foreground">Business transformation </span>
+                  <span className="gradient-text">enabled by technology</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Organisations facing critical skills gaps, high-growth companies are scaling rapidly, and enterprises are seeking specialised technical or sector expertise. Particularly valuable for technology companies, professional services firms, and organisations undergoing digital transformation requiring new capability development.
+                  We approach digital transformation as business transformation enabled by technology, not technology projects with business implications. Our methodology focuses on outcome definition, solution architecture, stakeholder engagement, and capability building to ensure transformations stick and deliver compound value over time.
                 </p>
                 <div className="space-y-3">
                   {[
-                    'High-growth companies scaling rapidly',
-                    'Technology companies seeking specialized talent',
-                    'Professional services firms building capabilities',
-                    'Organizations undergoing digital transformation',
+                    'Outcome-focused transformation strategies',
+                    'Risk-aware solution architecture',
+                    'Comprehensive stakeholder engagement',
+                    'Sustainable capability building',
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-[#0E78AA] shrink-0 mt-0.5" />
@@ -165,20 +161,20 @@ export function GlobalData2hirePage() {
                 <div className="p-8 rounded-3xl glass-card">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-6 rounded-2xl bg-[#0E78AA]/10 text-center">
-                      <Brain className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">AI-Powered Matching</p>
+                      <Award className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Proven Methods</p>
+                    </div>
+                    <div className="p-6 rounded-2xl bg-[#F7AE57]/10 text-center">
+                      <Zap className="w-8 h-8 text-[#F7AE57] mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Fast Results</p>
                     </div>
                     <div className="p-6 rounded-2xl bg-[#F7AE57]/10 text-center">
                       <Target className="w-8 h-8 text-[#F7AE57] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Skills Assessment</p>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-[#F7AE57]/10 text-center">
-                      <TrendingUp className="w-8 h-8 text-[#F7AE57] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Performance Prediction</p>
+                      <p className="text-sm text-muted-foreground">Business-Aligned</p>
                     </div>
                     <div className="p-6 rounded-2xl bg-[#0E78AA]/10 text-center">
-                      <Globe className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Market Intelligence</p>
+                      <Users className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">People-First</p>
                     </div>
                   </div>
                 </div>
@@ -192,11 +188,11 @@ export function GlobalData2hirePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-foreground">Key </span>
+                <span className="text-foreground">Our </span>
                 <span className="gradient-text">Capabilities</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive talent intelligence capabilities that transform how you identify, assess, and retain top talent.
+                End-to-end digital transformation services that drive sustainable business results.
               </p>
             </div>
 
@@ -224,18 +220,18 @@ export function GlobalData2hirePage() {
           </div>
         </section>
 
-        {/* Business Impact */}
+        {/* Outcomes */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-foreground">Business </span>
-                <span className="gradient-text">Impact</span>
+                <span className="text-foreground">Measurable </span>
+                <span className="gradient-text">Outcomes</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Organizations using Data2Hire achieve better talent decisions, reduced recruitment costs, and accelerated organizational capability development.
+                Achieve faster time-to-value, lower implementation risk, and higher adoption rates compared to traditional transformation approaches.
               </p>
             </div>
 
@@ -274,10 +270,10 @@ export function GlobalData2hirePage() {
           <div className="absolute inset-0 gradient-bg" />
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Request Demo
+              Explore Transformation Possibilities
             </h2>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              See how Data2Hire can transform your talent acquisition and workforce planning strategies.
+              Connect with our digital transformation experts to discover how we can help you achieve measurable business impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

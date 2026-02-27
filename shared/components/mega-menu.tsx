@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown, ChevronRight, Globe, ArrowRight } from 'lucide-react'
 import { cn } from '@/shared/lib/utils'
@@ -13,6 +14,7 @@ import { Button } from '@/shared/components/ui/button'
 
 export function MegaMenu() {
   const { site, basePath } = useSite()
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOnHero, setIsOnHero] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -24,6 +26,9 @@ export function MegaMenu() {
   const navigation = getNavigation(site.slug)
   const simpleNavigation = getSimpleNavigation(site.slug)
   const countries = getCountriesNavigation(site.slug)
+
+  const isGlobalSite = site.slug === 'global'
+  const isHomePage = pathname === '/' || pathname === ''
 
   // Scroll detection
   useEffect(() => {
@@ -70,8 +75,7 @@ export function MegaMenu() {
     }
   }, [isMobileMenuOpen])
 
-  const isGlobalSite = site.slug === 'global'
-  const useLightText = !isScrolled && isOnHero && isGlobalSite
+  const useLightText = !isScrolled && isOnHero && isGlobalSite && isHomePage
 
   const handleMenuEnter = useCallback((menuName: string) => {
     if (menuTimeoutRef.current) {
@@ -93,7 +97,7 @@ export function MegaMenu() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled ? 'glass-nav shadow-lg py-2' : 'bg-transparent py-6 mt-4'
+          isScrolled ? 'glass-nav shadow-lg py-2' : 'bg-transparent py-3 mt-2'
         )}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -355,17 +359,6 @@ function MegaMenuPanel({
                 </div>
               </div>
             )}
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="px-6 py-3 bg-muted/30 border-t border-border/50">
-            <Link
-              href={item.href}
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              View all {item.name.toLowerCase()}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </div>

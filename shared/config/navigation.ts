@@ -71,7 +71,7 @@ export function getNavigation(siteSlug: string): NavigationItemMega[] {
     // 1. ABOUT
     {
       name: 'About',
-      href: `${basePath}/about`,
+      href: '#',
       megaMenu: {
         columns: [
           {
@@ -152,7 +152,7 @@ export function getNavigation(siteSlug: string): NavigationItemMega[] {
     // 2. WHAT WE DO (contains Services, Solutions, Industries)
     {
       name: 'What we do',
-      href: `${basePath}/services`,
+      href: '#',
       megaMenu: {
         columns: [
           {
@@ -261,19 +261,13 @@ export function getNavigation(siteSlug: string): NavigationItemMega[] {
             ],
           },
         ],
-        featured: {
-          title: 'Explore Our Capabilities',
-          description: 'Discover how we help organizations transform through strategic intelligence.',
-          href: `${basePath}/services`,
-          cta: 'View All Services',
-        },
       },
     },
 
     // 3. INSIGHTS
     {
       name: 'Insights',
-      href: `${basePath}/insights`,
+      href: '#',
       megaMenu: {
         columns: [
           {
@@ -336,19 +330,13 @@ export function getNavigation(siteSlug: string): NavigationItemMega[] {
             ],
           },
         ],
-        featured: {
-          title: 'Latest Research',
-          description: 'Explore our latest thought leadership and industry research.',
-          href: `${basePath}/insights`,
-          cta: 'View All Insights',
-        },
       },
     },
 
     // 4. CAREERS
     {
       name: 'Careers',
-      href: `${basePath}/career`,
+      href: '#',
       megaMenu: {
         columns: [
           {
@@ -382,12 +370,6 @@ export function getNavigation(siteSlug: string): NavigationItemMega[] {
             ],
           },
         ],
-        featured: {
-          title: 'We\'re Hiring',
-          description: 'Join a team of innovators shaping the future of strategic intelligence.',
-          href: `${basePath}/career/jobs`,
-          cta: 'View Open Positions',
-        },
       },
     },
   ]
@@ -400,7 +382,7 @@ export function getSimpleNavigation(siteSlug: string): { name: string; href: str
   return [
     {
       name: 'About',
-      href: `${basePath}/about`,
+      href: '#',
       children: [
         { name: 'Who We Are', href: `${basePath}/about` },
         { name: 'Leadership', href: `${basePath}/about/leadership` },
@@ -410,7 +392,7 @@ export function getSimpleNavigation(siteSlug: string): { name: string; href: str
     },
     {
       name: 'What we do',
-      href: `${basePath}/services`,
+      href: '#',
       children: [
         { name: 'Strategy & Advisory', href: `${basePath}/services/strategy-advisory` },
         { name: 'Digital Transformation', href: `${basePath}/services/digital-transformation` },
@@ -434,7 +416,7 @@ export function getSimpleNavigation(siteSlug: string): { name: string; href: str
     },
     {
       name: 'Insights',
-      href: `${basePath}/insights`,
+      href: '#',
       children: [
         { name: 'Strategic Intelligence', href: `${basePath}/insights/strategic-intelligence` },
         { name: 'Artificial Intelligence', href: `${basePath}/insights/artificial-intelligence` },
@@ -446,7 +428,7 @@ export function getSimpleNavigation(siteSlug: string): { name: string; href: str
     },
     {
       name: 'Careers',
-      href: `${basePath}/career`,
+      href: '#',
       children: [
         { name: 'Life at Bravinci', href: `${basePath}/career` },
         { name: 'Open Roles', href: `${basePath}/career/jobs` },

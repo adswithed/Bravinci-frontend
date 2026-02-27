@@ -6,91 +6,88 @@ import { Footer } from '@/shared/components'
 import { GlobalSiteWrapper } from '@/sites/global/components'
 import { Button } from '@/shared/components/ui/button'
 import {
-  Users,
-  Target,
-  TrendingUp,
+  Database,
   Brain,
-  Globe,
+  TrendingUp,
+  Network,
+  LineChart,
+  MessageSquare,
   Zap,
   Shield,
-  BarChart3,
-  Clock,
-  Award,
-  Search,
-  UserCheck,
-  GitBranch,
-  AlertCircle,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
+  Target,
+  Award,
+  Activity
 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/shared/lib/utils'
 
 const capabilities = [
   {
+    icon: Shield,
+    title: 'Data Strategy and Governance Frameworks',
+    description: 'Establish comprehensive data governance and strategic frameworks for enterprise-wide data management.',
+  },
+  {
+    icon: Network,
+    title: 'Enterprise Data Architecture and Integration',
+    description: 'Design scalable data architectures that enable seamless integration across systems and platforms.',
+  },
+  {
+    icon: LineChart,
+    title: 'Advanced Analytics and Visualization',
+    description: 'Transform complex data into actionable insights with sophisticated analytics and visualization.',
+  },
+  {
     icon: Brain,
-    title: 'AI-powered Candidate Matching and Ranking',
-    description: 'Intelligent algorithms that match candidates to positions based on skills, experience, and organizational needs.',
-  },
-  {
-    icon: Target,
-    title: 'Skills Assessment and Gap Analysis',
-    description: 'Comprehensive evaluation of candidate capabilities and identification of skill gaps for targeted development.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Cultural Fit Evaluation and Prediction',
-    description: 'Advanced assessment tools that predict how well candidates will align with organizational culture and values.',
+    title: 'Artificial Intelligence and Machine Learning',
+    description: 'Implement AI and ML solutions that automate decisions and unlock predictive capabilities.',
   },
   {
     icon: TrendingUp,
-    title: 'Performance Forecasting and Success Modelling',
-    description: 'Predictive analytics that forecast candidate performance and success probability in specific roles.',
+    title: 'Predictive Modeling and Forecasting',
+    description: 'Build accurate predictive models that enable proactive decision-making and planning.',
   },
   {
-    icon: Globe,
-    title: 'Global Talent Market Intelligence',
-    description: 'Real-time insights into global talent markets, availability, and competitive compensation benchmarks.',
+    icon: MessageSquare,
+    title: 'Natural Language Processing and Automation',
+    description: 'Leverage NLP to automate text analysis, enhance customer interactions, and extract insights.',
   },
   {
     icon: Zap,
-    title: 'Hiring Velocity Optimization',
-    description: 'Streamlined processes and automation that accelerate time-to-hire while maintaining quality standards.',
+    title: 'Real-time Analytics and Operational Intelligence',
+    description: 'Enable real-time data processing and operational intelligence for instant decision-making.',
   },
   {
-    icon: AlertCircle,
-    title: 'Retention Risk Assessment',
-    description: 'Early warning systems that identify retention risks and enable proactive intervention strategies.',
-  },
-  {
-    icon: GitBranch,
-    title: 'Workforce Planning and Succession Modelling',
-    description: 'Strategic workforce planning tools that support succession planning and organizational capability development.',
+    icon: Database,
+    title: 'Data Quality and Master Data Management',
+    description: 'Ensure data accuracy, consistency, and reliability through robust quality and MDM practices.',
   },
 ]
 
 const outcomes = [
   {
-    stat: '50%',
-    label: 'Reduction in Time-to-Hire',
-    description: 'Accelerated recruitment processes without compromising quality',
-    icon: Clock,
+    stat: '70%',
+    label: 'Reduction in Report Generation',
+    description: 'Automated insights delivery and self-service analytics',
+    icon: Zap,
   },
   {
-    stat: '35%',
-    label: 'Improvement in First-Year Retention',
-    description: 'Better talent decisions leading to longer tenure',
-    icon: Users,
+    stat: '40%',
+    label: 'Forecast Improvement',
+    description: 'Enhanced prediction accuracy with ML models',
+    icon: Target,
   },
   {
-    stat: 'Higher',
-    label: 'Hiring Manager Satisfaction',
-    description: 'Significantly improved satisfaction with talent acquisition',
-    icon: Award,
+    stat: '5-15%',
+    label: 'Revenue Opportunities',
+    description: 'Data-driven insights unlock new growth paths',
+    icon: TrendingUp,
   },
 ]
 
-export function GlobalData2hirePage() {
+export function GlobalServiceDataAIPage() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -116,23 +113,23 @@ export function GlobalData2hirePage() {
               )}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium">
-                <Users className="w-4 h-4 text-[#0E78AA]" />
-                <span>Talent Intelligence</span>
+                <Database className="w-4 h-4 text-[#0E78AA]" />
+                <span>Data & AI Enablement</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="gradient-text">Empower HR with </span>
-                <span className="text-foreground">Strategic Workforce Analytics</span>
+                <span className="text-foreground">Transform data assets into </span>
+                <span className="gradient-text">decision advantage</span>
               </h1>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Data2Hire integrates data from HRIS, ATS, and external sources into a comprehensive dataset. The platform's interactive dashboard provides real-time insights into workforce trends and risk scores, allowing HR teams to monitor and adjust strategies effectively.
+                Organizations accumulate vast data volumes but struggle to extract intelligence that drives competitive advantage. Fragmented data architectures, inconsistent governance, limited analytical capabilities, and unclear AI strategies prevent organizations from converting data assets into decision-making power. The challenge isn't data availability—it's building intelligence systems that transform information into actionable insight and automated advantage.
               </p>
             </div>
           </div>
         </section>
 
-        {/* What It Is / Who It's For */}
+        {/* Solution Framing */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
 
@@ -140,18 +137,18 @@ export function GlobalData2hirePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  <span className="text-foreground">Built for organizations that </span>
-                  <span className="gradient-text">compete on talent</span>
+                  <span className="text-foreground">Intelligence systems that </span>
+                  <span className="gradient-text">create advantage</span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Organisations facing critical skills gaps, high-growth companies are scaling rapidly, and enterprises are seeking specialised technical or sector expertise. Particularly valuable for technology companies, professional services firms, and organisations undergoing digital transformation requiring new capability development.
+                  Our data and AI practice builds intelligence architectures that convert information into sustainable competitive advantage. We design data platforms, analytics capabilities, and AI systems that don't just answer questions—they anticipate needs, automate decisions, and continuously learn to improve performance and unlock opportunities.
                 </p>
                 <div className="space-y-3">
                   {[
-                    'High-growth companies scaling rapidly',
-                    'Technology companies seeking specialized talent',
-                    'Professional services firms building capabilities',
-                    'Organizations undergoing digital transformation',
+                    'Unified data architectures for enterprise intelligence',
+                    'Advanced analytics that reveal hidden patterns',
+                    'AI systems that automate and optimize decisions',
+                    'Continuous learning for sustained advantage',
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-[#0E78AA] shrink-0 mt-0.5" />
@@ -165,20 +162,20 @@ export function GlobalData2hirePage() {
                 <div className="p-8 rounded-3xl glass-card">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-6 rounded-2xl bg-[#0E78AA]/10 text-center">
-                      <Brain className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">AI-Powered Matching</p>
+                      <Award className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">AI-Powered</p>
                     </div>
                     <div className="p-6 rounded-2xl bg-[#F7AE57]/10 text-center">
                       <Target className="w-8 h-8 text-[#F7AE57] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Skills Assessment</p>
+                      <p className="text-sm text-muted-foreground">Insight-Driven</p>
                     </div>
                     <div className="p-6 rounded-2xl bg-[#F7AE57]/10 text-center">
-                      <TrendingUp className="w-8 h-8 text-[#F7AE57] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Performance Prediction</p>
+                      <Brain className="w-8 h-8 text-[#F7AE57] mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Intelligent</p>
                     </div>
                     <div className="p-6 rounded-2xl bg-[#0E78AA]/10 text-center">
-                      <Globe className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground">Market Intelligence</p>
+                      <Activity className="w-8 h-8 text-[#0E78AA] mx-auto mb-2" />
+                      <p className="text-sm text-muted-foreground">Real-Time</p>
                     </div>
                   </div>
                 </div>
@@ -192,11 +189,11 @@ export function GlobalData2hirePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-foreground">Key </span>
+                <span className="text-foreground">Our </span>
                 <span className="gradient-text">Capabilities</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive talent intelligence capabilities that transform how you identify, assess, and retain top talent.
+                Comprehensive data and AI services that transform information into competitive advantage.
               </p>
             </div>
 
@@ -224,18 +221,18 @@ export function GlobalData2hirePage() {
           </div>
         </section>
 
-        {/* Business Impact */}
+        {/* Outcomes */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-foreground">Business </span>
-                <span className="gradient-text">Impact</span>
+                <span className="text-foreground">Measurable </span>
+                <span className="gradient-text">Outcomes</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Organizations using Data2Hire achieve better talent decisions, reduced recruitment costs, and accelerated organizational capability development.
+                Organizations gain intelligence systems that accelerate insights, improve forecast accuracy, and reveal revenue opportunities hidden in data.
               </p>
             </div>
 
@@ -274,10 +271,10 @@ export function GlobalData2hirePage() {
           <div className="absolute inset-0 gradient-bg" />
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Request Demo
+              Unlock Your Data's Potential
             </h2>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              See how Data2Hire can transform your talent acquisition and workforce planning strategies.
+              Connect with our data and AI experts to discover how we can transform your data assets into decision advantage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
