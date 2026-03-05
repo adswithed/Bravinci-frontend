@@ -1,1 +1,344 @@
-[{"id":41,"title":"Test Service","slug":"test-service","content":"","excerpt":"","featured_image":false,"hero_text":"test heading","problem_statement":"tesr afjfljga","solution_headline":"saffsfgfgaf","solution":"gsfgfgfgfagfga","capabilities_subtitle":"","outcomes_subtitle":"","cta_text":"","description":"","cta_button_text":"Get Started","icon":"","color":"#0E78AA","href":""},{"id":7,"title":"Strategy & Advisory","slug":"strategy-advisory","content":"","excerpt":"","featured_image":false,"hero_text":"Strategic intelligence that illuminates the path forward","description":"Connect with our strategy team to explore how we can help you navigate complexity and achieve your strategic objectives.","problem_statement":"Organizations face unprecedented complexity\u2014regulatory volatility, technological disruption, competitive intensity, and stakeholder demands converge to create strategic uncertainty. Traditional planning approaches struggle to address multi-dimensional challenges that require simultaneous consideration of operational, financial, technological, and market dynamics. Leaders need intelligence frameworks that clarify strategic options, quantify implications, and accelerate high-confidence decision-making.","solution":"Our strategy and advisory practice combines strategic foresight with analytical rigor to deliver intelligence that matters. We don't produce shelf-ware strategies or generic recommendations. Instead, we build decision frameworks, scenario models, and strategic playbooks that become operational tools for navigating complexity and capturing opportunity.","icon":"","color":"#0E78AA","capabilities":[{"title":"Strategic Planning & Scenario Modeling","description":"Build comprehensive strategic plans with multiple scenario analyses to navigate uncertainty.","icon":"target"},{"title":"Market Intelligence & Competitive Analysis","description":"Deep market insights and competitive positioning intelligence to inform strategic decisions.","icon":"bar-chart-3"},{"title":"Digital Strategy & Transformation Roadmapping","description":"Create actionable roadmaps that align digital initiatives with business objectives.","icon":"trending-up"},{"title":"Operating Model Design & Optimization","description":"Design and optimize operating models for efficiency and strategic alignment.","icon":"activity"},{"title":"Risk Assessment & Mitigation Planning","description":"Identify, quantify, and develop mitigation strategies for strategic risks.","icon":"shield"},{"title":"Strategic Due Diligence & M&A Support","description":"Comprehensive due diligence and integration planning for mergers and acquisitions.","icon":"file-text"},{"title":"Executive Advisory & Decision Support","description":"Ongoing strategic counsel and decision frameworks for executive leadership.","icon":"users"},{"title":"Change Leadership & Transformation Management","description":"Guide organizations through strategic change with proven change management methodologies.","icon":"lightbulb"}],"outcomes":[{"stat":"50%","label":"Reduction in Strategic Planning Cycles","description":"Faster strategy development with maintained quality","icon":"zap"},{"stat":"40%","label":"Improvement in Forecast Accuracy","description":"More precise predictions for better decision-making","icon":"target"},{"stat":"85%","label":"Higher Stakeholder Alignment","description":"Significantly improved consensus on strategic initiatives","icon":"users"}],"cta_text":"Discuss Your Strategic Challenges","href":"\/services\/strategy-advisory","solution_headline":"Intelligence that drives action","solution_points":[{"text":"Decision frameworks that clarify strategic options"},{"text":"Scenario models that quantify implications"},{"text":"Strategic playbooks for operational execution"},{"text":"Intelligence systems that sustain advantage"}],"solution_features":[{"icon":"award","label":"Strategic Excellence"},{"icon":"target","label":"Outcome-Focused"},{"icon":"bar-chart-3","label":"Data-Driven"},{"icon":"users","label":"Collaborative"}],"capabilities_subtitle":"Comprehensive strategic advisory services designed to navigate complexity and drive results.","outcomes_subtitle":"Organizations gain clarity on strategic direction, confidence in major decisions, and frameworks for navigating uncertainty.","cta_button_text":"Get Started"},{"id":8,"title":"Digital Transformation","slug":"digital-transformation","content":"","excerpt":"","featured_image":false,"hero_text":"Transformation that delivers measurable business impact","description":"Connect with our digital transformation experts to discover how we can help you achieve measurable business impact.","problem_statement":"Digital transformation has become a strategic imperative, yet most initiatives fail to deliver expected value. Organizations struggle with technology selection, integration complexity, change resistance, and unclear ROI. The challenge isn't technology availability\u2014it's architecting transformation that aligns technical capabilities with business objectives while managing risk and ensuring sustainable adoption.","solution":"We approach digital transformation as business transformation enabled by technology, not technology projects with business implications. Our methodology focuses on outcome definition, solution architecture, stakeholder engagement, and capability building to ensure transformations stick and deliver compound value over time.","icon":"trending-up","color":"#F7AE57","capabilities":[{"icon":"target","title":"Digital Vision & Roadmap Development","description":"Create comprehensive digital strategies aligned with business objectives and market opportunities."},{"icon":"layers","title":"Enterprise Architecture & Platform Selection","description":"Design scalable architectures and select optimal technology platforms for your needs."},{"icon":"cloud","title":"Cloud Migration & Modernization","description":"Migrate and modernize applications with minimal disruption and maximum value."},{"icon":"workflow","title":"Business Process Optimization & Automation","description":"Streamline operations and automate workflows for efficiency and agility."},{"icon":"sparkles","title":"Customer Experience Transformation","description":"Redesign customer journeys with digital-first experiences that drive engagement."},{"icon":"settings","title":"Digital Product & Service Design","description":"Develop innovative digital products and services that create market differentiation."},{"icon":"layers","title":"Integration Architecture & API Strategy","description":"Build robust integration frameworks and API strategies for seamless connectivity."},{"icon":"users","title":"Change Management & Adoption Enablement","description":"Drive user adoption and organizational change for sustainable transformation."}],"outcomes":[{"stat":"3x","label":"ROI Within 18 Months","description":"Triple return on transformation investments","icon":"trending-up"},{"stat":"60%","label":"Reduction in Manual Processes","description":"Significant automation and efficiency gains","icon":"zap"},{"stat":"85%","label":"Improved Customer Satisfaction","description":"Higher NPS scores and customer engagement","icon":"sparkles"}],"cta_text":"Explore Transformation Possibilities","href":"\/services\/digital-transformation","solution_headline":"Business transformation enabled by technology","solution_points":[{"text":"Outcome-focused transformation strategies"},{"text":"Risk-aware solution architecture"},{"text":"Comprehensive stakeholder engagement"},{"text":"Sustainable capability building"}],"solution_features":[{"icon":"award","label":"Proven Methods"},{"icon":"zap","label":"Fast Results"},{"icon":"target","label":"Business-Aligned"},{"icon":"users","label":"People-First"}],"capabilities_subtitle":"End-to-end digital transformation services that drive sustainable business results.","outcomes_subtitle":"Achieve faster time-to-value, lower implementation risk, and higher adoption rates compared to traditional transformation approaches.","cta_button_text":"Get Started"},{"id":9,"title":"Data & AI Enablement","slug":"data-ai","content":"","excerpt":"","featured_image":false,"hero_text":"Transform data assets into decision advantage","description":"Connect with our data and AI experts to discover how we can transform your data assets into decision advantage.","problem_statement":"Organizations accumulate vast data volumes but struggle to extract intelligence that drives competitive advantage. Fragmented data architectures, inconsistent governance, limited analytical capabilities, and unclear AI strategies prevent organizations from converting data assets into decision-making power. The challenge isn't data availability\u2014it's building intelligence systems that transform information into actionable insight and automated advantage.","solution":"Our data and AI practice builds intelligence architectures that convert information into sustainable competitive advantage. We design data platforms, analytics capabilities, and AI systems that don't just answer questions\u2014they anticipate needs, automate decisions, and continuously learn to improve performance and unlock opportunities.","icon":"database","color":"#0E78AA","capabilities":[{"icon":"shield","title":"Data Strategy and Governance Frameworks","description":"Establish comprehensive data governance and strategic frameworks for enterprise-wide data management."},{"icon":"network","title":"Enterprise Data Architecture and Integration","description":"Design scalable data architectures that enable seamless integration across systems and platforms."},{"icon":"line-chart","title":"Advanced Analytics and Visualization","description":"Transform complex data into actionable insights with sophisticated analytics and visualization."},{"icon":"brain","title":"Artificial Intelligence and Machine Learning","description":"Implement AI and ML solutions that automate decisions and unlock predictive capabilities."},{"icon":"trending-up","title":"Predictive Modeling and Forecasting","description":"Build accurate predictive models that enable proactive decision-making and planning."},{"icon":"message-square","title":"Natural Language Processing and Automation","description":"Leverage NLP to automate text analysis, enhance customer interactions, and extract insights."},{"icon":"zap","title":"Real-time Analytics and Operational Intelligence","description":"Enable real-time data processing and operational intelligence for instant decision-making."},{"icon":"database","title":"Data Quality and Master Data Management","description":"Ensure data accuracy, consistency, and reliability through robust quality and MDM practices."}],"outcomes":[{"stat":"70%","label":"Reduction in Report Generation","description":"Automated insights delivery and self-service analytics","icon":"zap"},{"stat":"40%","label":"Forecast Improvement","description":"Enhanced prediction accuracy with ML models","icon":"target"},{"stat":"5-15%","label":"Revenue Opportunities","description":"Data-driven insights unlock new growth paths","icon":"trending-up"}],"cta_text":"Unlock Your Data's Potential","href":"\/services\/data-ai","solution_headline":"Intelligence systems that create advantage","solution_points":[{"text":"Unified data architectures for enterprise intelligence"},{"text":"Advanced analytics that reveal hidden patterns"},{"text":"AI systems that automate and optimize decisions"},{"text":"Continuous learning for sustained advantage"}],"solution_features":[{"icon":"award","label":"AI-Powered"},{"icon":"target","label":"Insight-Driven"},{"icon":"brain","label":"Intelligent"},{"icon":"activity","label":"Real-Time"}],"capabilities_subtitle":"Comprehensive data and AI services that transform information into competitive advantage.","outcomes_subtitle":"Organizations gain intelligence systems that accelerate insights, improve forecast accuracy, and reveal revenue opportunities hidden in data.","cta_button_text":"Get Started"}]
+[
+  {
+    "id": 7,
+    "title": "Strategy & Advisory",
+    "slug": "strategy-advisory",
+    "content": "",
+    "excerpt": "",
+    "featured_image": false,
+    "hero_text": "Strategic intelligence that illuminates the path forward",
+    "description": "Connect with our strategy team to explore how we can help you navigate complexity and achieve your strategic objectives.",
+    "problem_statement": "Organizations face unprecedented complexity—regulatory volatility, technological disruption, competitive intensity, and stakeholder demands converge to create strategic uncertainty. Traditional planning approaches struggle to address multi-dimensional challenges that require simultaneous consideration of operational, financial, technological, and market dynamics. Leaders need intelligence frameworks that clarify strategic options, quantify implications, and accelerate high-confidence decision-making.",
+    "solution": "Our strategy and advisory practice combines strategic foresight with analytical rigor to deliver intelligence that matters. We don't produce shelf-ware strategies or generic recommendations. Instead, we build decision frameworks, scenario models, and strategic playbooks that become operational tools for navigating complexity and capturing opportunity.",
+    "icon": "",
+    "color": "#0E78AA",
+    "capabilities": [
+      {
+        "title": "Strategic Planning & Scenario Modeling",
+        "description": "Build comprehensive strategic plans with multiple scenario analyses to navigate uncertainty.",
+        "icon": "target"
+      },
+      {
+        "title": "Market Intelligence & Competitive Analysis",
+        "description": "Deep market insights and competitive positioning intelligence to inform strategic decisions.",
+        "icon": "bar-chart-3"
+      },
+      {
+        "title": "Digital Strategy & Transformation Roadmapping",
+        "description": "Create actionable roadmaps that align digital initiatives with business objectives.",
+        "icon": "trending-up"
+      },
+      {
+        "title": "Operating Model Design & Optimization",
+        "description": "Design and optimize operating models for efficiency and strategic alignment.",
+        "icon": "activity"
+      },
+      {
+        "title": "Risk Assessment & Mitigation Planning",
+        "description": "Identify, quantify, and develop mitigation strategies for strategic risks.",
+        "icon": "shield"
+      },
+      {
+        "title": "Strategic Due Diligence & M&A Support",
+        "description": "Comprehensive due diligence and integration planning for mergers and acquisitions.",
+        "icon": "file-text"
+      },
+      {
+        "title": "Executive Advisory & Decision Support",
+        "description": "Ongoing strategic counsel and decision frameworks for executive leadership.",
+        "icon": "users"
+      },
+      {
+        "title": "Change Leadership & Transformation Management",
+        "description": "Guide organizations through strategic change with proven change management methodologies.",
+        "icon": "lightbulb"
+      }
+    ],
+    "outcomes": [
+      {
+        "stat": "50%",
+        "label": "Reduction in Strategic Planning Cycles",
+        "description": "Faster strategy development with maintained quality",
+        "icon": "zap"
+      },
+      {
+        "stat": "40%",
+        "label": "Improvement in Forecast Accuracy",
+        "description": "More precise predictions for better decision-making",
+        "icon": "target"
+      },
+      {
+        "stat": "85%",
+        "label": "Higher Stakeholder Alignment",
+        "description": "Significantly improved consensus on strategic initiatives",
+        "icon": "users"
+      }
+    ],
+    "cta_text": "Discuss Your Strategic Challenges",
+    "href": "/services/strategy-advisory",
+    "solution_headline": "Intelligence that drives action",
+    "solution_points": [
+      {
+        "text": "Decision frameworks that clarify strategic options"
+      },
+      {
+        "text": "Scenario models that quantify implications"
+      },
+      {
+        "text": "Strategic playbooks for operational execution"
+      },
+      {
+        "text": "Intelligence systems that sustain advantage"
+      }
+    ],
+    "solution_features": [
+      {
+        "icon": "award",
+        "label": "Strategic Excellence"
+      },
+      {
+        "icon": "target",
+        "label": "Outcome-Focused"
+      },
+      {
+        "icon": "bar-chart-3",
+        "label": "Data-Driven"
+      },
+      {
+        "icon": "users",
+        "label": "Collaborative"
+      }
+    ],
+    "capabilities_subtitle": "Comprehensive strategic advisory services designed to navigate complexity and drive results.",
+    "outcomes_subtitle": "Organizations gain clarity on strategic direction, confidence in major decisions, and frameworks for navigating uncertainty.",
+    "cta_button_text": "Get Started"
+  },
+  {
+    "id": 8,
+    "title": "Digital Transformation",
+    "slug": "digital-transformation",
+    "content": "",
+    "excerpt": "",
+    "featured_image": false,
+    "hero_text": "Transformation that delivers measurable business impact",
+    "description": "Connect with our digital transformation experts to discover how we can help you achieve measurable business impact.",
+    "problem_statement": "Digital transformation has become a strategic imperative, yet most initiatives fail to deliver expected value. Organizations struggle with technology selection, integration complexity, change resistance, and unclear ROI. The challenge isn't technology availability—it's architecting transformation that aligns technical capabilities with business objectives while managing risk and ensuring sustainable adoption.",
+    "solution": "We approach digital transformation as business transformation enabled by technology, not technology projects with business implications. Our methodology focuses on outcome definition, solution architecture, stakeholder engagement, and capability building to ensure transformations stick and deliver compound value over time.",
+    "icon": "trending-up",
+    "color": "#F7AE57",
+    "capabilities": [
+      {
+        "icon": "target",
+        "title": "Digital Vision & Roadmap Development",
+        "description": "Create comprehensive digital strategies aligned with business objectives and market opportunities."
+      },
+      {
+        "icon": "layers",
+        "title": "Enterprise Architecture & Platform Selection",
+        "description": "Design scalable architectures and select optimal technology platforms for your needs."
+      },
+      {
+        "icon": "cloud",
+        "title": "Cloud Migration & Modernization",
+        "description": "Migrate and modernize applications with minimal disruption and maximum value."
+      },
+      {
+        "icon": "workflow",
+        "title": "Business Process Optimization & Automation",
+        "description": "Streamline operations and automate workflows for efficiency and agility."
+      },
+      {
+        "icon": "sparkles",
+        "title": "Customer Experience Transformation",
+        "description": "Redesign customer journeys with digital-first experiences that drive engagement."
+      },
+      {
+        "icon": "settings",
+        "title": "Digital Product & Service Design",
+        "description": "Develop innovative digital products and services that create market differentiation."
+      },
+      {
+        "icon": "layers",
+        "title": "Integration Architecture & API Strategy",
+        "description": "Build robust integration frameworks and API strategies for seamless connectivity."
+      },
+      {
+        "icon": "users",
+        "title": "Change Management & Adoption Enablement",
+        "description": "Drive user adoption and organizational change for sustainable transformation."
+      }
+    ],
+    "outcomes": [
+      {
+        "stat": "3x",
+        "label": "ROI Within 18 Months",
+        "description": "Triple return on transformation investments",
+        "icon": "trending-up"
+      },
+      {
+        "stat": "60%",
+        "label": "Reduction in Manual Processes",
+        "description": "Significant automation and efficiency gains",
+        "icon": "zap"
+      },
+      {
+        "stat": "85%",
+        "label": "Improved Customer Satisfaction",
+        "description": "Higher NPS scores and customer engagement",
+        "icon": "sparkles"
+      }
+    ],
+    "cta_text": "Explore Transformation Possibilities",
+    "href": "/services/digital-transformation",
+    "solution_headline": "Business transformation enabled by technology",
+    "solution_points": [
+      {
+        "text": "Outcome-focused transformation strategies"
+      },
+      {
+        "text": "Risk-aware solution architecture"
+      },
+      {
+        "text": "Comprehensive stakeholder engagement"
+      },
+      {
+        "text": "Sustainable capability building"
+      }
+    ],
+    "solution_features": [
+      {
+        "icon": "award",
+        "label": "Proven Methods"
+      },
+      {
+        "icon": "zap",
+        "label": "Fast Results"
+      },
+      {
+        "icon": "target",
+        "label": "Business-Aligned"
+      },
+      {
+        "icon": "users",
+        "label": "People-First"
+      }
+    ],
+    "capabilities_subtitle": "End-to-end digital transformation services that drive sustainable business results.",
+    "outcomes_subtitle": "Achieve faster time-to-value, lower implementation risk, and higher adoption rates compared to traditional transformation approaches.",
+    "cta_button_text": "Get Started"
+  },
+  {
+    "id": 9,
+    "title": "Data & AI Enablement",
+    "slug": "data-ai",
+    "content": "",
+    "excerpt": "",
+    "featured_image": false,
+    "hero_text": "Transform data assets into decision advantage",
+    "description": "Connect with our data and AI experts to discover how we can transform your data assets into decision advantage.",
+    "problem_statement": "Organizations accumulate vast data volumes but struggle to extract intelligence that drives competitive advantage. Fragmented data architectures, inconsistent governance, limited analytical capabilities, and unclear AI strategies prevent organizations from converting data assets into decision-making power. The challenge isn't data availability—it's building intelligence systems that transform information into actionable insight and automated advantage.",
+    "solution": "Our data and AI practice builds intelligence architectures that convert information into sustainable competitive advantage. We design data platforms, analytics capabilities, and AI systems that don't just answer questions—they anticipate needs, automate decisions, and continuously learn to improve performance and unlock opportunities.",
+    "icon": "database",
+    "color": "#0E78AA",
+    "capabilities": [
+      {
+        "icon": "shield",
+        "title": "Data Strategy and Governance Frameworks",
+        "description": "Establish comprehensive data governance and strategic frameworks for enterprise-wide data management."
+      },
+      {
+        "icon": "network",
+        "title": "Enterprise Data Architecture and Integration",
+        "description": "Design scalable data architectures that enable seamless integration across systems and platforms."
+      },
+      {
+        "icon": "line-chart",
+        "title": "Advanced Analytics and Visualization",
+        "description": "Transform complex data into actionable insights with sophisticated analytics and visualization."
+      },
+      {
+        "icon": "brain",
+        "title": "Artificial Intelligence and Machine Learning",
+        "description": "Implement AI and ML solutions that automate decisions and unlock predictive capabilities."
+      },
+      {
+        "icon": "trending-up",
+        "title": "Predictive Modeling and Forecasting",
+        "description": "Build accurate predictive models that enable proactive decision-making and planning."
+      },
+      {
+        "icon": "message-square",
+        "title": "Natural Language Processing and Automation",
+        "description": "Leverage NLP to automate text analysis, enhance customer interactions, and extract insights."
+      },
+      {
+        "icon": "zap",
+        "title": "Real-time Analytics and Operational Intelligence",
+        "description": "Enable real-time data processing and operational intelligence for instant decision-making."
+      },
+      {
+        "icon": "database",
+        "title": "Data Quality and Master Data Management",
+        "description": "Ensure data accuracy, consistency, and reliability through robust quality and MDM practices."
+      }
+    ],
+    "outcomes": [
+      {
+        "stat": "70%",
+        "label": "Reduction in Report Generation",
+        "description": "Automated insights delivery and self-service analytics",
+        "icon": "zap"
+      },
+      {
+        "stat": "40%",
+        "label": "Forecast Improvement",
+        "description": "Enhanced prediction accuracy with ML models",
+        "icon": "target"
+      },
+      {
+        "stat": "5-15%",
+        "label": "Revenue Opportunities",
+        "description": "Data-driven insights unlock new growth paths",
+        "icon": "trending-up"
+      }
+    ],
+    "cta_text": "Unlock Your Data's Potential",
+    "href": "/services/data-ai",
+    "solution_headline": "Intelligence systems that create advantage",
+    "solution_points": [
+      {
+        "text": "Unified data architectures for enterprise intelligence"
+      },
+      {
+        "text": "Advanced analytics that reveal hidden patterns"
+      },
+      {
+        "text": "AI systems that automate and optimize decisions"
+      },
+      {
+        "text": "Continuous learning for sustained advantage"
+      }
+    ],
+    "solution_features": [
+      {
+        "icon": "award",
+        "label": "AI-Powered"
+      },
+      {
+        "icon": "target",
+        "label": "Insight-Driven"
+      },
+      {
+        "icon": "brain",
+        "label": "Intelligent"
+      },
+      {
+        "icon": "activity",
+        "label": "Real-Time"
+      }
+    ],
+    "capabilities_subtitle": "Comprehensive data and AI services that transform information into competitive advantage.",
+    "outcomes_subtitle": "Organizations gain intelligence systems that accelerate insights, improve forecast accuracy, and reveal revenue opportunities hidden in data.",
+    "cta_button_text": "Get Started"
+  }
+]

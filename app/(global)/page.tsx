@@ -11,14 +11,12 @@ import {
   getSolutions,
   getIndustries,
   getStats,
-  getTestimonials,
   getPartners,
   getInsights,
   CMSItem,
 } from '@/shared/lib/wordpress'
 import { MegaMenu, Footer, ServicesSection, SolutionsSection, IndustriesSection, AboutSection, CTASection } from '@/shared/components'
 import { GlobalSiteWrapper, HeroSection, StatsSection, PartnersSection, InsightsSection } from '@/sites/global/components'
-import { TestimonialsSection } from '@/shared/components/testimonials-section'
 
 // Transform WordPress data to component props
 // WordPress returns fields with prefixes like service_description, stat_value, etc.
@@ -26,12 +24,12 @@ function transformServices(items: CMSItem[]) {
   return items.map((item) => ({
     id: item.id,
     title: item.title,
-    description: (item.service_description as string) || '',
-    icon: (item.service_icon as string) || 'lightbulb',
-    features: (item.service_features as string[]) || [],
-    gradient: item.service_gradient as string,
-    iconBg: item.service_icon_bg as string,
-    href: item.service_href as string,
+    description: (item.service_description as string) || (item.description as string) || '',
+    icon: (item.service_icon as string) || (item.icon as string) || 'lightbulb',
+    features: (item.service_features as string[]) || (item.features as string[]) || [],
+    gradient: (item.service_gradient as string) || (item.gradient as string),
+    iconBg: (item.service_icon_bg as string) || (item.iconBg as string),
+    href: (item.service_href as string) || (item.href as string),
   }))
 }
 
@@ -39,12 +37,12 @@ function transformSolutions(items: CMSItem[]) {
   return items.map((item) => ({
     id: item.id,
     title: item.title,
-    description: (item.solution_description as string) || '',
-    icon: (item.solution_icon as string) || 'shield',
-    badge: item.solution_badge as string,
-    features: (item.solution_features as string[]) || [],
-    href: item.solution_href as string,
-    isFeatured: item.solution_is_featured === '1' || item.solution_is_featured === true,
+    description: (item.solution_description as string) || (item.description as string) || '',
+    icon: (item.solution_icon as string) || (item.icon as string) || 'shield',
+    badge: (item.solution_badge as string) || (item.badge_text as string),
+    features: (item.solution_features as string[]) || (item.features as string[]) || [],
+    href: (item.solution_href as string) || (item.href as string),
+    isFeatured: item.solution_is_featured === '1' || item.solution_is_featured === true || item.is_featured === '1' || item.is_featured === true,
   }))
 }
 
@@ -71,16 +69,6 @@ function transformStats(items: CMSItem[]) {
   }))
 }
 
-function transformTestimonials(items: CMSItem[]) {
-  return items.map((item) => ({
-    id: item.id,
-    name: item.title,
-    role: (item.testimonial_role as string) || '',
-    text: (item.testimonial_text as string) || '',
-    image: item.testimonial_image as string,
-  }))
-}
-
 function transformPartners(items: CMSItem[]) {
   return items.map((item) => ({
     id: item.id,
@@ -104,12 +92,11 @@ function transformInsights(items: CMSItem[]) {
 
 // Fetch all content from WordPress in parallel
 async function getHomePageContent() {
-  const [services, solutions, industries, stats, testimonials, partners, insights] = await Promise.all([
+  const [services, solutions, industries, stats, partners, insights] = await Promise.all([
     getServices(globalSite),
     getSolutions(globalSite),
     getIndustries(globalSite),
     getStats(globalSite),
-    getTestimonials(globalSite),
     getPartners(globalSite),
     getInsights(globalSite),
   ])
@@ -119,7 +106,6 @@ async function getHomePageContent() {
     solutions: solutions.length > 0 ? transformSolutions(solutions) : undefined,
     industries: industries.length > 0 ? transformIndustries(industries) : undefined,
     stats: stats.length > 0 ? transformStats(stats) : undefined,
-    testimonials: testimonials.length > 0 ? transformTestimonials(testimonials) : undefined,
     partners: partners.length > 0 ? transformPartners(partners) : undefined,
     insights: insights.length > 0 ? transformInsights(insights) : undefined,
   }
@@ -150,10 +136,7 @@ export default async function HomePage() {
         {/* 6. The Bravinci Advantage / Differentiators */}
         <AboutSection />
 
-        {/* 7. Client Testimonials */}
-        <TestimonialsSection testimonials={content.testimonials} />
-
-        {/* 8. Partners & Ecosystem Preview */}
+        {/* 7. Partners & Ecosystem Preview */}
         <PartnersSection partners={content.partners} />
 
         {/* 9. Insights / Thought Leadership Preview */}
