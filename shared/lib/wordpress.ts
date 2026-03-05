@@ -1,16 +1,18 @@
 import { SiteConfig, WPPost, WPPage, WPMedia, WPMenu } from './types'
+import fallbackServices from '@/shared/data/services.json'
+import fallbackSolutions from '@/shared/data/solutions.json'
 
 /**
  * WordPress REST API client for multisite
  *
  * This module provides functions to fetch data from WordPress.
  * Each function accepts a SiteConfig to determine which site to query.
+ * Falls back to static JSON data when WordPress is unreachable.
  */
 
 interface FetchOptions {
   revalidate?: number
   cache?: RequestCache
-  tags?: string[]
 }
 
 // Default fetch options for ISR
@@ -29,7 +31,6 @@ async function wpFetch<T>(
     const res = await fetch(url, {
       next: {
         revalidate: options.revalidate,
-        tags: options.tags,
       },
       cache: options.cache,
     })
@@ -373,7 +374,10 @@ export async function getServices(
   options?: FetchOptions
 ): Promise<CMSItem[]> {
   const url = `${site.wpApiUrl}/bravinci/v1/services`
-  return (await wpFetch<CMSItem[]>(url, { ...options, tags: ['services'] })) || []
+  const result = await wpFetch<CMSItem[]>(url, { ...options, tags: ['services'] })
+  if (result && result.length > 0) return result
+  // Fallback to static data
+  return (fallbackServices as unknown as CMSItem[]) || []
 }
 
 /**
@@ -385,7 +389,11 @@ export async function getServiceBySlug(
   options?: FetchOptions
 ): Promise<CMSItem | null> {
   const url = `${site.wpApiUrl}/bravinci/v1/services/${encodeURIComponent(slug)}`
-  return wpFetch<CMSItem>(url, { ...options, tags: ['services', `service-${slug}`] })
+  const result = await wpFetch<CMSItem>(url, { ...options, tags: ['services', `service-${slug}`] })
+  if (result) return result
+  // Fallback to static data
+  const items = fallbackServices as unknown as CMSItem[]
+  return items.find((s) => s.slug === slug) || null
 }
 
 /**
@@ -396,7 +404,10 @@ export async function getSolutions(
   options?: FetchOptions
 ): Promise<CMSItem[]> {
   const url = `${site.wpApiUrl}/bravinci/v1/solutions`
-  return (await wpFetch<CMSItem[]>(url, { ...options, tags: ['solutions'] })) || []
+  const result = await wpFetch<CMSItem[]>(url, { ...options, tags: ['solutions'] })
+  if (result && result.length > 0) return result
+  // Fallback to static data
+  return (fallbackSolutions as unknown as CMSItem[]) || []
 }
 
 /**
@@ -408,7 +419,11 @@ export async function getSolutionBySlug(
   options?: FetchOptions
 ): Promise<CMSItem | null> {
   const url = `${site.wpApiUrl}/bravinci/v1/solutions/${encodeURIComponent(slug)}`
-  return wpFetch<CMSItem>(url, { ...options, tags: ['solutions', `solution-${slug}`] })
+  const result = await wpFetch<CMSItem>(url, { ...options, tags: ['solutions', `solution-${slug}`] })
+  if (result) return result
+  // Fallback to static data
+  const items = fallbackSolutions as unknown as CMSItem[]
+  return items.find((s) => s.slug === slug) || null
 }
 
 /**
