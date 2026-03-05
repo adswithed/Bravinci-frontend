@@ -65,7 +65,7 @@ export interface Testimonial {
   name: string
   role: string
   text: string
-  image?: string
+  image: string
 }
 
 export interface TestimonialsSectionProps {
