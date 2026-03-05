@@ -137,6 +137,8 @@ export function NetherlandsStats() {
   return (
     <section
       ref={sectionRef}
+      id="netherlands-stats"
+      data-section="netherlands-stats"
       className="py-20 md:py-32 relative overflow-hidden"
     >
       {/* Light gradient background */}

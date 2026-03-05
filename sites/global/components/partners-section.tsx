@@ -4,7 +4,8 @@ import { Handshake } from 'lucide-react'
 import { cn } from '@/shared/lib/utils'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/shared/components/ui/motion-wrapper'
 
-const partners = [
+// Default data for standalone usage
+const defaultPartners = [
   {
     name: 'Microsoft Azure',
     description: 'Premier cloud infrastructure partner enabling scalable, secure deployment with global reach.',
@@ -27,7 +28,29 @@ const partners = [
   },
 ]
 
-export function PartnersSection() {
+export interface Partner {
+  id?: number
+  name: string
+  description: string
+  logo?: string
+  url?: string
+}
+
+export interface PartnersSectionProps {
+  badge?: string
+  title?: string
+  titleHighlight?: string
+  subtitle?: string
+  partners?: Partner[]
+}
+
+export function PartnersSection({
+  badge = 'Powered by World-Class Technology',
+  title = 'Strategic',
+  titleHighlight = 'Partners',
+  subtitle = 'Our ecosystem approach means you benefit from world-class technology without the complexity of managing multiple vendor relationships.',
+  partners = defaultPartners,
+}: PartnersSectionProps) {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -35,15 +58,14 @@ export function PartnersSection() {
         <FadeIn className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-4">
             <Handshake className="w-4 h-4 text-[#0E78AA]" />
-            <span>Powered by World-Class Technology</span>
+            <span>{badge}</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            <span className="text-foreground">Strategic </span>
-            <span className="text-[#0E78AA]">Partners</span>
+            <span className="text-foreground">{title} </span>
+            <span className="text-[#0E78AA]">{titleHighlight}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our ecosystem approach means you benefit from world-class technology
-            without the complexity of managing multiple vendor relationships.
+            {subtitle}
           </p>
         </FadeIn>
 
@@ -52,13 +74,21 @@ export function PartnersSection() {
           {partners.map((partner) => (
             <StaggerItem key={partner.name}>
               <div className="group p-6 rounded-2xl glass-card text-center transition-all duration-500 hover:scale-105 h-full">
-                {/* Partner Name Placeholder - Replace with actual logos */}
+                {/* Partner Logo/Name */}
                 <div className="h-12 flex items-center justify-center mb-3">
-                  <span className="text-lg font-bold text-foreground group-hover:text-[#0E78AA] transition-colors">
-                    {partner.name}
-                  </span>
+                  {partner.logo ? (
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-10 max-w-full object-contain group-hover:scale-110 transition-transform"
+                    />
+                  ) : (
+                    <span className="text-lg font-bold text-foreground group-hover:text-[#0E78AA] transition-colors">
+                      {partner.name}
+                    </span>
+                  )}
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {partner.description}
                 </p>
               </div>

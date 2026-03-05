@@ -2,30 +2,39 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { cn } from '@/shared/lib/utils'
-import { TrendingUp, Users, Award, Building } from 'lucide-react'
+import { TrendingUp, Users, Award, Building, LucideIcon } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/shared/components/ui/motion-wrapper'
 
-const stats = [
+// Icon mapping for WordPress data
+const iconMap: Record<string, LucideIcon> = {
+  'trending-up': TrendingUp,
+  'users': Users,
+  'award': Award,
+  'building': Building,
+}
+
+// Default data for standalone usage
+const defaultStats = [
   {
     value: 15,
     suffix: '+',
     label: 'Years of Transformation',
     description: 'Driving strategic transformation across public and private sectors',
-    icon: Award,
+    icon: 'award',
   },
   {
     value: 200,
     suffix: '+',
     label: 'Solutions Deployed',
     description: 'Intelligence solutions deployed across six continents',
-    icon: Building,
+    icon: 'building',
   },
   {
     value: 98,
     suffix: '%',
     label: 'Client Satisfaction',
     description: 'Sustained engagement partnerships with measurable impact',
-    icon: Users,
+    icon: 'users',
   },
   {
     value: 50,
@@ -33,9 +42,28 @@ const stats = [
     prefix: '€',
     label: 'Value Delivered',
     description: 'Measurable value through data-driven decision frameworks',
-    icon: TrendingUp,
+    icon: 'trending-up',
   },
 ]
+
+export interface Stat {
+  id?: number
+  value: number
+  prefix?: string
+  suffix?: string
+  label: string
+  description: string
+  icon: string
+}
+
+export interface StatsSectionProps {
+  badge?: string
+  title?: string
+  titleHighlight?: string
+  subtitle?: string
+  stats?: Stat[]
+  bottomText?: string
+}
 
 function useCountUp(end: number, duration: number = 2000, startCounting: boolean = false) {
   const [count, setCount] = useState(0)
@@ -71,16 +99,16 @@ function StatCard({
   stat,
   isVisible,
 }: {
-  stat: typeof stats[0] & { prefix?: string }
+  stat: Stat
   isVisible: boolean
 }) {
   const count = useCountUp(stat.value, 2000, isVisible)
-  const Icon = stat.icon
+  const Icon = iconMap[stat.icon] || Award
 
   return (
     <div
       className={cn(
-        'group relative p-8 rounded-2xl transition-all duration-500',
+        'group relative p-8 rounded-2xl transition-all duration-500 h-full flex flex-col',
         'bg-white border border-gray-100 shadow-sm',
         'hover:shadow-lg hover:border-[#0E78AA]/20 hover:-translate-y-1'
       )}
@@ -103,7 +131,7 @@ function StatCard({
       </div>
 
       {/* Description */}
-      <p className="text-sm text-gray-600 leading-relaxed">
+      <p className="text-sm text-gray-600 leading-relaxed mt-auto">
         {stat.description}
       </p>
 
@@ -113,7 +141,14 @@ function StatCard({
   )
 }
 
-export function StatsSection() {
+export function StatsSection({
+  badge = 'Our Impact',
+  title = 'Credibility Through',
+  titleHighlight = 'Impact',
+  subtitle = 'Proven track record delivering strategic intelligence solutions that drive measurable transformation across sectors and continents.',
+  stats = defaultStats,
+  bottomText = 'Headquartered in Beesd, Netherlands with global operations',
+}: StatsSectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -153,32 +188,39 @@ export function StatsSection() {
         <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0E78AA]/5 border border-[#0E78AA]/10 text-sm font-medium text-[#0E78AA] mb-6">
             <TrendingUp className="w-4 h-4" />
-            <span>Our Impact</span>
+            <span>{badge}</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Credibility Through <span className="text-[#0E78AA]">Impact</span>
+            {title} <span className="text-[#0E78AA]">{titleHighlight}</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Proven track record delivering strategic intelligence solutions
-            that drive measurable transformation across sectors and continents.
+            {subtitle}
           </p>
         </FadeIn>
 
         {/* Stats Grid */}
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
           {stats.map((stat) => (
-            <StaggerItem key={stat.label}>
+            <StaggerItem key={stat.label} className="h-full">
               <StatCard stat={stat} isVisible={isVisible} />
             </StaggerItem>
           ))}
         </StaggerContainer>
 
         {/* Bottom highlight */}
-        <FadeIn delay={0.5} className="mt-16 text-center">
-          <p className="text-gray-500 text-sm">
-            Headquartered in <span className="text-gray-900 font-semibold">Beesd, Netherlands</span> with global operations
-          </p>
-        </FadeIn>
+        {bottomText && (
+          <FadeIn delay={0.5} className="mt-16 text-center">
+            <p className="text-gray-500 text-sm">
+              {bottomText.includes('Beesd') ? (
+                <>
+                  Headquartered in <span className="text-gray-900 font-semibold">Beesd, Netherlands</span> with global operations
+                </>
+              ) : (
+                bottomText
+              )}
+            </p>
+          </FadeIn>
+        )}
       </div>
     </section>
   )

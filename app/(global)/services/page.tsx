@@ -1,12 +1,15 @@
 /**
  * Global Services Page Route
  *
- * Thin routing file that imports the services page from the global site.
- * All content is in sites/global/components/pages/services-page.tsx
+ * Fetches services from WordPress and renders the services page.
+ * All content comes from WordPress CMS - NO FALLBACKS.
  */
 
 import { GlobalServicesPage } from '@/sites/global/components/pages/services-page'
 
-export default function ServicesPage() {
+// Revalidate every 60 seconds
+export const revalidate = 60
+
+export default async function ServicesPage() {
   return <GlobalServicesPage />
 }

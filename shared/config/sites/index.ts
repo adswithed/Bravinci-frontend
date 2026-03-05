@@ -1,13 +1,14 @@
 import { SiteConfig } from '@/shared/lib/types'
 import { globalSite } from './global'
 import { netherlandsSite } from './netherlands'
+import { nigeriaSite } from './nigeria'
 
 // All registered sites (including global)
 export const allSites: Record<string, SiteConfig> = {
   global: globalSite,
   netherlands: netherlandsSite,
+  nigeria: nigeriaSite,
   // Add more sites as they are created:
-  // nigeria: nigeriaSite,
   // surinam: surinamSite,
   // romania: romaniaSite,
   // morocco: moroccoSite,
@@ -17,6 +18,7 @@ export const allSites: Record<string, SiteConfig> = {
 // Country sites only (excludes global - used for [site] dynamic route)
 export const countrySites: Record<string, SiteConfig> = {
   netherlands: netherlandsSite,
+  nigeria: nigeriaSite,
 }
 
 // Default site (global - served at root)

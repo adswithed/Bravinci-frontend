@@ -17,3 +17,6 @@ export { TrustSection } from './trust-section'
 
 // Other Components
 export { AnimatedBackground } from './animated-background'
+
+// CMS Components
+export { PageRenderer } from './page-renderer'

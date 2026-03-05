@@ -129,7 +129,7 @@ export function MegaMenu() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                      'px-4 py-2 text-[15px] font-medium rounded-lg transition-all duration-200',
                       'flex items-center gap-1',
                       useLightText
                         ? 'text-white/90 hover:text-white hover:bg-white/10'
@@ -159,7 +159,7 @@ export function MegaMenu() {
                 >
                   <button
                     className={cn(
-                      'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                      'px-4 py-2 text-[15px] font-medium rounded-lg transition-all duration-200',
                       'flex items-center gap-1',
                       useLightText
                         ? 'text-white/90 hover:text-white hover:bg-white/10'

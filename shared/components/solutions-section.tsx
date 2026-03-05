@@ -11,13 +11,25 @@ import {
   TrendingUp,
   ArrowRight,
   CheckCircle2,
-  Zap
+  Zap,
+  LucideIcon
 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/shared/lib/utils'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/shared/components/ui/motion-wrapper'
 
-const solutions = [
+// Icon mapping for WordPress data
+const iconMap: Record<string, LucideIcon> = {
+  'shield': Shield,
+  'bar-chart-3': BarChart3,
+  'users': Users,
+  'cpu': Cpu,
+  'file-text': FileText,
+  'trending-up': TrendingUp,
+}
+
+// Default data for standalone usage
+const defaultSolutions = [
   {
     id: 1,
     title: 'Dividos',
@@ -28,8 +40,8 @@ const solutions = [
       'High-performance data warehousing',
       'Transparent pay-as-you-go pricing',
     ],
-    icon: Shield,
-    highlight: true,
+    icon: 'shield',
+    isFeatured: true,
     badge: 'Data Platform',
     href: '/solutions/dividos',
   },
@@ -43,8 +55,8 @@ const solutions = [
       'Competitive threat & opportunity radar',
       'HR, financial & operational KPIs',
     ],
-    icon: BarChart3,
-    highlight: true,
+    icon: 'bar-chart-3',
+    isFeatured: true,
     badge: 'Intelligence Hub',
     href: '/solutions/strategy-command-center',
   },
@@ -58,14 +70,45 @@ const solutions = [
       'Workforce planning & succession',
       'Performance forecasting & retention',
     ],
-    icon: Users,
-    highlight: true,
+    icon: 'users',
+    isFeatured: true,
     badge: 'Talent Intelligence',
     href: '/solutions/data2hire',
   },
 ]
 
-export function SolutionsSection() {
+export interface Solution {
+  id?: number
+  title: string
+  description: string
+  icon: string
+  badge?: string
+  features: string[]
+  href?: string
+  isFeatured?: boolean
+}
+
+export interface SolutionsSectionProps {
+  badge?: string
+  title?: string
+  titleHighlight?: string
+  subtitle?: string
+  solutions?: Solution[]
+  bottomText?: string
+  ctaText?: string
+  ctaLink?: string
+}
+
+export function SolutionsSection({
+  badge = 'Purpose-Built Intelligence Platforms',
+  title = 'Proprietary',
+  titleHighlight = 'Solutions',
+  subtitle = 'Years of domain expertise crystallized into deployable intelligence systems—combining best practices, proven methodologies, and advanced technology.',
+  solutions = defaultSolutions,
+  bottomText = 'Need a custom solution? Our team is ready to help.',
+  ctaText = 'Schedule a Consultation',
+  ctaLink = '/contact',
+}: SolutionsSectionProps) {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   return (
@@ -84,32 +127,31 @@ export function SolutionsSection() {
         <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-6">
             <Zap className="w-4 h-4 text-[#F7AE57]" />
-            <span>Purpose-Built Intelligence Platforms</span>
+            <span>{badge}</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-foreground">Proprietary </span>
-            <span className="text-[#F7AE57]">Solutions</span>
+            <span className="text-foreground">{title} </span>
+            <span className="text-[#F7AE57]">{titleHighlight}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Years of domain expertise crystallized into deployable intelligence systems—combining
-            best practices, proven methodologies, and advanced technology.
+            {subtitle}
           </p>
         </FadeIn>
 
         {/* Solutions Grid */}
         <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((solution) => {
-            const Icon = solution.icon
-            const isHovered = hoveredCard === solution.id
+          {solutions.map((solution, index) => {
+            const Icon = iconMap[solution.icon] || Shield
+            const isHovered = hoveredCard === (solution.id || index)
 
             return (
               <StaggerItem
-                key={solution.id}
-                className={cn(solution.highlight ? 'md:col-span-2 lg:col-span-1' : '')}
+                key={solution.id || index}
+                className={cn(solution.isFeatured ? 'md:col-span-2 lg:col-span-1' : '')}
               >
                 <div
                   className="group relative rounded-2xl overflow-hidden h-full"
-                  onMouseEnter={() => setHoveredCard(solution.id)}
+                  onMouseEnter={() => setHoveredCard(solution.id || index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   {/* Card */}
@@ -120,22 +162,24 @@ export function SolutionsSection() {
                       isHovered
                         ? 'border-[#0E78AA]/50 shadow-xl shadow-[#0E78AA]/10'
                         : 'border-border/50 shadow-lg',
-                      solution.highlight && 'bg-[#0E78AA]/5'
+                      solution.isFeatured && 'bg-[#0E78AA]/5'
                     )}
                   >
                     {/* Badge */}
-                    <div className="absolute top-4 right-4">
-                      <span
-                        className={cn(
-                          'text-xs font-medium px-3 py-1 rounded-full',
-                          solution.highlight
-                            ? 'bg-[#0E78AA] text-white'
-                            : 'bg-muted text-muted-foreground'
-                        )}
-                      >
-                        {solution.badge}
-                      </span>
-                    </div>
+                    {solution.badge && (
+                      <div className="absolute top-4 right-4">
+                        <span
+                          className={cn(
+                            'text-xs font-medium px-3 py-1 rounded-full',
+                            solution.isFeatured
+                              ? 'bg-[#0E78AA] text-white'
+                              : 'bg-muted text-muted-foreground'
+                          )}
+                        >
+                          {solution.badge}
+                        </span>
+                      </div>
+                    )}
 
                     {/* Icon */}
                     <div
@@ -182,10 +226,10 @@ export function SolutionsSection() {
                     {/* CTA */}
                     <Button
                       asChild
-                      variant={solution.highlight ? 'default' : 'outline'}
+                      variant={solution.isFeatured ? 'default' : 'outline'}
                       className={cn(
                         'w-full group/btn transition-all duration-300',
-                        solution.highlight
+                        solution.isFeatured
                           ? 'bg-[#0E78AA] hover:bg-[#0a5a80] text-white hover:shadow-lg'
                           : 'border-[#0E78AA]/30 hover:border-[#0E78AA] hover:bg-[#0E78AA]/5'
                       )}
@@ -210,7 +254,7 @@ export function SolutionsSection() {
         {/* Bottom CTA */}
         <FadeIn delay={0.4} className="text-center mt-16">
           <p className="text-muted-foreground mb-6">
-            Need a custom solution? Our team is ready to help.
+            {bottomText}
           </p>
           <Button
             size="lg"
@@ -218,8 +262,8 @@ export function SolutionsSection() {
             className="border-2 border-[#0E78AA]/30 hover:border-[#0E78AA] hover:bg-[#0E78AA]/5 font-semibold"
             asChild
           >
-            <Link href="#contact" className="flex items-center gap-2">
-              Schedule a Consultation
+            <Link href={ctaLink} className="flex items-center gap-2">
+              {ctaText}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>

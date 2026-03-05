@@ -9,58 +9,98 @@ import {
   Heart,
   GraduationCap,
   ArrowRight,
-  Globe
+  Globe,
+  LucideIcon
 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/shared/lib/utils'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/shared/components/ui/motion-wrapper'
 
-const industries = [
+// Icon mapping for WordPress data
+const iconMap: Record<string, LucideIcon> = {
+  'landmark': Landmark,
+  'building-2': Building2,
+  'zap': Zap,
+  'factory': Factory,
+  'heart': Heart,
+  'graduation-cap': GraduationCap,
+  'globe': Globe,
+}
+
+// Default data for standalone usage
+const defaultIndustries = [
   {
     title: 'Public Sector',
     description: 'Modernize service delivery, enhance transparency, and optimize resource allocation through intelligent digital transformation.',
-    icon: Landmark,
+    icon: 'landmark',
     href: '/industries/public-sector',
     color: '#0E78AA',
   },
   {
     title: 'Financial Services',
     description: 'Navigate regulatory complexity, manage risk, and capitalize on digital innovation in rapidly evolving markets.',
-    icon: Building2,
+    icon: 'building-2',
     href: '/industries/financial-services',
     color: '#F7AE57',
   },
   {
     title: 'Energy & Utilities',
     description: 'Support sustainable energy transition, grid modernization, and strategic planning for decarbonization pathways.',
-    icon: Zap,
+    icon: 'zap',
     href: '/industries/energy-utilities',
     color: '#0E78AA',
   },
   {
     title: 'Manufacturing',
     description: 'Drive operational excellence through smart manufacturing, supply chain intelligence, and predictive maintenance.',
-    icon: Factory,
+    icon: 'factory',
     href: '/industries/manufacturing',
     color: '#F7AE57',
   },
   {
     title: 'Healthcare & Life Sciences',
     description: 'Transform patient outcomes and operational efficiency through clinical intelligence and population health analytics.',
-    icon: Heart,
+    icon: 'heart',
     href: '/industries/healthcare',
     color: '#0E78AA',
   },
   {
     title: 'Education & Workforce',
     description: 'Align skills development with evolving economic demands and improve learner outcomes through data-driven insights.',
-    icon: GraduationCap,
+    icon: 'graduation-cap',
     href: '/industries/education',
     color: '#F7AE57',
   },
 ]
 
-export function IndustriesSection() {
+export interface Industry {
+  id?: number
+  title: string
+  description: string
+  icon: string
+  color?: string
+  href?: string
+}
+
+export interface IndustriesSectionProps {
+  badge?: string
+  title?: string
+  titleHighlight?: string
+  subtitle?: string
+  industries?: Industry[]
+  ctaText?: string
+  ctaLink?: string
+}
+
+export function IndustriesSection({
+  badge = 'Deep Expertise Across Critical Sectors',
+  title = 'Industries',
+  titleHighlight = 'We Serve',
+  subtitle = "Strategic intelligence requirements vary dramatically across sectors. We've invested years developing deep domain knowledge in six critical industries.",
+  industries = defaultIndustries,
+  ctaText = 'View All Industries',
+  ctaLink = '/industries',
+}: IndustriesSectionProps) {
   return (
     <section
       id="industries"
@@ -77,26 +117,25 @@ export function IndustriesSection() {
         <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-6">
             <Globe className="w-4 h-4 text-[#0E78AA]" />
-            <span>Deep Expertise Across Critical Sectors</span>
+            <span>{badge}</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-foreground">Industries </span>
-            <span className="text-[#0E78AA]">We Serve</span>
+            <span className="text-foreground">{title} </span>
+            <span className="text-[#0E78AA]">{titleHighlight}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Strategic intelligence requirements vary dramatically across sectors.
-            We&apos;ve invested years developing deep domain knowledge in six critical industries.
+            {subtitle}
           </p>
         </FadeIn>
 
         {/* Industries Grid */}
         <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => {
-            const Icon = industry.icon
+            const Icon = iconMap[industry.icon] || Landmark
             return (
               <StaggerItem key={industry.title}>
                 <Link
-                  href={industry.href}
+                  href={industry.href || '/industries'}
                   className={cn(
                     'group relative p-6 rounded-2xl h-full block',
                     'glass-card hover-lift cursor-pointer',
@@ -106,11 +145,11 @@ export function IndustriesSection() {
                   {/* Icon */}
                   <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
-                    style={{ backgroundColor: `${industry.color}15` }}
+                    style={{ backgroundColor: `${industry.color || '#0E78AA'}15` }}
                   >
                     <Icon
                       className="w-7 h-7 transition-colors duration-300"
-                      style={{ color: industry.color }}
+                      style={{ color: industry.color || '#0E78AA' }}
                     />
                   </div>
 
@@ -141,8 +180,8 @@ export function IndustriesSection() {
             className="border-2 border-[#0E78AA]/30 hover:border-[#0E78AA] hover:bg-[#0E78AA]/5 font-semibold"
             asChild
           >
-            <Link href="/industries" className="flex items-center gap-2">
-              View All Industries
+            <Link href={ctaLink} className="flex items-center gap-2">
+              {ctaText}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>

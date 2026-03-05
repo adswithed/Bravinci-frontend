@@ -23,11 +23,6 @@ export { GlobalData2hirePage } from './pages/data2hire-page'
 export { GlobalMasterclassPage } from './pages/masterclass-page'
 export { GlobalStrategyCommandCenterPage } from './pages/strategy-command-center-page'
 
-// Global Site Specific Components - Service Pages
-export { GlobalServiceStrategyAdvisoryPage } from './pages/service-strategy-advisory-page'
-export { GlobalServiceDigitalTransformationPage } from './pages/service-digital-transformation-page'
-export { GlobalServiceDataAIPage } from './pages/service-data-ai-page'
-
 // Global Site Specific Components - Industry Pages
 export { GlobalIndustryPublicSectorPage } from './pages/industry-public-sector-page'
 export { GlobalIndustryFinancialServicesPage } from './pages/industry-financial-services-page'

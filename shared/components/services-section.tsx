@@ -8,17 +8,29 @@ import {
   Briefcase,
   BarChart3,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  LucideIcon
 } from 'lucide-react'
 import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/components/ui/button'
 import { FadeIn, StaggerContainer, StaggerItem } from '@/shared/components/ui/motion-wrapper'
 
-const services = [
+// Icon mapping for WordPress data
+const iconMap: Record<string, LucideIcon> = {
+  'lightbulb': Lightbulb,
+  'graduation-cap': GraduationCap,
+  'users': Users,
+  'code': Code,
+  'briefcase': Briefcase,
+  'bar-chart-3': BarChart3,
+}
+
+// Default data for standalone usage
+const defaultServices = [
   {
     title: 'Strategy & Advisory',
     description: 'Navigate organizational complexity with strategic intelligence frameworks that illuminate opportunity, quantify risk, and accelerate decision-making.',
-    icon: Lightbulb,
+    icon: 'lightbulb',
     features: ['Strategic Planning & Scenario Modeling', 'Market Intelligence & Competitive Analysis', 'Digital Strategy & Transformation Roadmapping', 'Executive Advisory & Decision Support'],
     gradient: 'from-[#0E78AA]/20 to-[#0E78AA]/5',
     iconBg: 'bg-[#0E78AA]/10',
@@ -28,7 +40,7 @@ const services = [
   {
     title: 'Digital Transformation',
     description: 'Accelerate digital evolution through integrated technology solutions that enhance operational efficiency, improve customer experience, and create sustainable competitive advantage.',
-    icon: Code,
+    icon: 'code',
     features: ['Enterprise Architecture & Platform Selection', 'Cloud Migration & Modernization', 'Business Process Automation', 'Change Management & Adoption'],
     gradient: 'from-[#F7AE57]/20 to-[#F7AE57]/5',
     iconBg: 'bg-[#F7AE57]/10',
@@ -38,7 +50,7 @@ const services = [
   {
     title: 'Data & AI Enablement',
     description: 'Unlock trapped value in your data ecosystem through advanced analytics, artificial intelligence, and intelligent automation that drive measurable business outcomes.',
-    icon: BarChart3,
+    icon: 'bar-chart-3',
     features: ['Data Strategy & Governance', 'Advanced Analytics & Visualization', 'AI & Machine Learning', 'Predictive Modeling & Forecasting'],
     gradient: 'from-[#0E78AA]/15 to-[#F7AE57]/10',
     iconBg: 'bg-[#0E78AA]/15',
@@ -47,7 +59,37 @@ const services = [
   },
 ]
 
-export function ServicesSection() {
+export interface Service {
+  id?: number
+  title: string
+  description: string
+  icon: string
+  features: string[]
+  gradient?: string
+  iconBg?: string
+  span?: string
+  href?: string
+}
+
+export interface ServicesSectionProps {
+  badge?: string
+  title?: string
+  titleHighlight?: string
+  subtitle?: string
+  services?: Service[]
+  ctaText?: string
+  ctaLink?: string
+}
+
+export function ServicesSection({
+  badge = 'How We Help Organizations Win',
+  title = 'Strategic Intelligence',
+  titleHighlight = 'Services',
+  subtitle = 'We combine strategic foresight with technical excellence to deliver intelligence solutions that matter.',
+  services = defaultServices,
+  ctaText = 'Explore All Services',
+  ctaLink = '/services',
+}: ServicesSectionProps) {
   return (
     <section
       id="services"
@@ -64,26 +106,25 @@ export function ServicesSection() {
         <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4 text-[#0E78AA]" />
-            <span>How We Help Organizations Win</span>
+            <span>{badge}</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-foreground">Strategic Intelligence </span>
-            <span className="text-[#0E78AA]">Services</span>
+            <span className="text-foreground">{title} </span>
+            <span className="text-[#0E78AA]">{titleHighlight}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We combine strategic foresight with technical excellence to deliver
-            intelligence solutions that matter.
+            {subtitle}
           </p>
         </FadeIn>
 
         {/* Services Grid */}
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {services.map((service) => {
-            const Icon = service.icon
+            const Icon = iconMap[service.icon] || Lightbulb
             return (
               <StaggerItem
                 key={service.title}
-                className={cn(service.span)}
+                className={cn(service.span || '')}
               >
                 <div
                   className={cn(
@@ -96,7 +137,7 @@ export function ServicesSection() {
                   <div
                     className={cn(
                       'absolute inset-0 bg-gradient-to-br opacity-50 transition-opacity duration-300 group-hover:opacity-70',
-                      service.gradient
+                      service.gradient || 'from-[#0E78AA]/20 to-[#0E78AA]/5'
                     )}
                   />
 
@@ -107,7 +148,7 @@ export function ServicesSection() {
                       className={cn(
                         'w-12 h-12 rounded-xl flex items-center justify-center mb-4',
                         'transition-transform duration-300 group-hover:scale-110',
-                        service.iconBg
+                        service.iconBg || 'bg-[#0E78AA]/10'
                       )}
                     >
                       <Icon className="w-6 h-6 text-[#0E78AA]" />
@@ -159,7 +200,7 @@ export function ServicesSection() {
             size="lg"
             className="bg-[#0E78AA] hover:bg-[#0a5a80] text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            Explore All Services
+            {ctaText}
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </FadeIn>

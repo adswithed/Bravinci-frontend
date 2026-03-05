@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from 'react'
 import { Shield, MapPin, TrendingUp, Users, CheckCircle2, ArrowRight } from 'lucide-react'
 import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/components/ui/button'
+import Link from 'next/link'
 
 const benefits = [
   {
@@ -71,6 +72,8 @@ export function NetherlandsValue() {
   return (
     <section
       ref={sectionRef}
+      id="netherlands-value"
+      data-section="netherlands-value"
       className="py-20 md:py-32 relative overflow-hidden bg-white"
     >
       {/* Background */}
@@ -185,9 +188,12 @@ export function NetherlandsValue() {
             <Button
               size="lg"
               className="bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              asChild
             >
-              Partner with Us
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <Link href="/netherlands/contact">
+                Partner with Us
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
             </Button>
           </div>
         </div>

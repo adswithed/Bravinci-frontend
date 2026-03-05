@@ -2,7 +2,8 @@
 
 import { TestimonialsSection as TestimonialsSectionComponent } from '@/shared/components/ui/testimonial-v2'
 
-const testimonials = [
+// Default data for standalone usage
+const defaultTestimonials = [
   {
     text: 'Bravinci transformed our strategic planning process. The Strategy Command Center gave us real-time insights we never had before, enabling faster and more confident decision-making.',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150',
@@ -59,13 +60,33 @@ const testimonials = [
   },
 ]
 
-export function TestimonialsSection() {
+export interface Testimonial {
+  id?: number
+  name: string
+  role: string
+  text: string
+  image?: string
+}
+
+export interface TestimonialsSectionProps {
+  badge?: string
+  title?: string
+  subtitle?: string
+  testimonials?: Testimonial[]
+}
+
+export function TestimonialsSection({
+  badge = 'Client Testimonials',
+  title = 'What Our Clients Say',
+  subtitle = 'Trusted by leading enterprises worldwide to transform their strategic decision-making and drive exceptional results.',
+  testimonials = defaultTestimonials,
+}: TestimonialsSectionProps) {
   return (
     <TestimonialsSectionComponent
       testimonials={testimonials}
-      title="What Our Clients Say"
-      subtitle="Trusted by leading enterprises worldwide to transform their strategic decision-making and drive exceptional results."
-      badge="Client Testimonials"
+      title={title}
+      subtitle={subtitle}
+      badge={badge}
     />
   )
 }

@@ -1,12 +1,16 @@
 /**
- * Netherlands About Page Route
- *
- * Thin routing file that imports the about page from the Netherlands site.
- * All content is in sites/netherlands/components/pages/about-page.tsx
+ * Country Site About Page Route
  */
 
 import { NetherlandsAboutPage } from '@/sites/netherlands/components/pages/about-page'
+import { NigeriaAboutPage } from '@/sites/nigeria/components/pages/about-page'
+import { SitePageResolver } from '../site-page-resolver'
+
+const pages: Record<string, React.ComponentType> = {
+  netherlands: NetherlandsAboutPage,
+  nigeria: NigeriaAboutPage,
+}
 
 export default function AboutPage() {
-  return <NetherlandsAboutPage />
+  return <SitePageResolver pages={pages} />
 }
